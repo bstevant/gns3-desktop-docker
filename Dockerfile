@@ -22,6 +22,8 @@ RUN \
 
 COPY xsession /root/.xsession
 COPY passwd /root/.vnc/passwd
+RUN chmod 600 /root/.vnc/passwd
+RUN setcap -r /usr/bin/dynamips
 
 # Define working directory.
 WORKDIR /data
